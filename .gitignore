@@ -1,0 +1,6 @@
+natural.log
+*.log
+response_*.html
+cron/tmp/
+.cron_delete-db-files.lock
+__pycache__

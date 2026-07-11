@@ -1,0 +1,21 @@
+<div class="rar">
+    <table>
+        <thead>
+          <tr>
+            <th class="ranking">順位</th>
+            <th class="blog-name">ブログ（サイト）名</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for ran in rank %}
+          <!-- {{ ran['count'] }} -->
+          <tr class="rank{{loop.index}}">
+            <td class="rank">{{loop.index}}</td>
+            <td class="blog">
+              <a href="{{ran['url']}}" target="_blank" class="a-link">{{ran['name']}}</a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

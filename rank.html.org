@@ -1,0 +1,43 @@
+
+<div class="rar">
+    <table>
+      <thead>
+        <tr>
+          <th class="ranking">順位</th>
+          <th class="blog-name">ブログ（サイト）名</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="rank1">
+          <td class="rank">1</td>
+          <td class="blog">
+            <a href="https://tokkataro.blog.jp/" target="_blank" class="a-link">激安特価太郎ブログ</a>
+          </td>
+        </tr>
+        <tr class="rank2">
+          <td class="rank">2</td>
+          <td class="blog">
+            <a href="https://www.nagano-life.net/blog/" target="_blank" class="a-link">ながのらいふ．ねっと　ぶろぐ</a>
+          </td>
+        </tr>
+        <tr class="rank3">
+          <td class="rank">3</td>
+          <td class="blog">
+            <a href="https://fanblogs.jp/nightfly/" target="_blank" class="a-link">いいものみつけた！お買い物情報</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="blog">
+            <a href="https://gekiyasu.blog/" target="_blank" class="a-link">安いぞ!激安特価ニュース速報</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="blog">
+            <a href="https://gekiyasutoka.com/" target="_blank" class="a-link">ヤフオク落札価格より安い超特価品情報blog</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
