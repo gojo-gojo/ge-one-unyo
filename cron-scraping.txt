@@ -1,0 +1,18 @@
+POPULAR_PAGE_DOMAIN='gekiyasutokka.com'
+
+# 古いDB削除後、古い画像削除。その後ランキング生成
+10,30,50 * * * * www-data /opt/nginx-access/cron_delete-db-files.sh > /dev/null 2>&1
+
+# WPキャッシュ生成と削除
+*/5      * * * * www-data python3 /opt/nginx-access/del-cache.py > /dev/null 2>&1
+
+# サイトランク更新
+5 */2      * * * www-data python3 /opt/nginx-access/rank.py > /dev/null 2>&1
+
+#47    16 * * * www-data python3 /opt/nginx-access/rank.py 2>&1 | logger nginx-access 
+#15,45  * * * * www-data python3 /opt/nginx-access/wp_post_check.py 2>&1 | logger nginx-access
+#55    18 * * * root bash /usr/local/bin/delete-wp-cache.sh 30 2>&1 | logger nginx-access
+#35     * * * * www-data cd /opt/nginx-access ; python3 /opt/nginx-access/popular_page.py 2>&1 | logger nginx-access
+#*/15   * * * * www-data /opt/nginx-access/del-cache.py >> /var/log/scraping/del-cache.log 2>&1
+
+
