@@ -3,7 +3,7 @@
 #
 # 実行内容（上から順に実行し、失敗した時点で停止）:
 #   1. /opt/nginx-access/response_*.html の最新3個以外を削除
-#   2. delete_old_article.sh 24  … 24時間より前に更新された記事を DB から削除
+#   2. delete_old_article.sh      … 23時間より前に更新された記事を DB から削除
 #   3. orphan-media.sh scan / delete --yes / cleanup-db --yes
 #      … 未使用メディアの一覧作成 → ファイル削除 → 孤立 postmeta 削除
 #   4. popular_page.py … 直近10時間の投稿から人気記事HTMLを再生成
@@ -45,9 +45,9 @@ log "[1/4] cleanup old response_*.html (keep latest $KEEP_RESPONSES)"
 ls -1t "$BASE_DIR"/response_*.html 2>/dev/null | tail -n +$((KEEP_RESPONSES + 1)) | xargs -d '\n' -r rm -f
 log "remaining: $(ls -1 "$BASE_DIR"/response_*.html 2>/dev/null | wc -l) files"
 
-# 2. 古い記事の削除（24時間より前）
-log "[2/4] delete_old_article.sh 24"
-bash "$BASE_DIR/delete_old_article.sh" 24
+# 2. 古い記事の削除（期限は delete_old_article.sh の HOURS_AGO 参照）
+log "[2/4] delete_old_article.sh"
+bash "$BASE_DIR/delete_old_article.sh"
 
 # 3. 未使用メディアの整理
 # scan が失敗したら delete は実行しない（set -e により停止）

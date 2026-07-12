@@ -9,7 +9,8 @@ DB_NAME="${DB_NAME:-gekiyasutokka_com}"
 DB_USER="${DB_USER:-gekiyasutokka_com}"
 DB_PASSWORD="${DB_PASSWORD:-gekiyasutokka_com}"
 
-HOURS_AGO="${1:-${HOURS_AGO:-36}}"
+# 記事の DB 削除期限（時間）。cron から引数なしで呼ばれる。
+HOURS_AGO="${1:-${HOURS_AGO:-23}}"
 
 if [[ ! "$HOURS_AGO" =~ ^[0-9]+$ ]]; then
   echo "Invalid hours: $HOURS_AGO" >&2
